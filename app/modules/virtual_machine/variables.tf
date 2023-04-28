@@ -10,10 +10,6 @@ variable "rg_name" {
     type = string  
 }
 
-variable "tag_name" {
-    type = string
-}
-
 variable "admin_username" {
     type = string  
 }
@@ -30,7 +26,3 @@ variable "ssh_key_name" {
     type = string  
 }
 
-# Public IP config
-variable "allocation_method" {
-    type = string  
-}

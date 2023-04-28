@@ -70,7 +70,7 @@ resource "azurerm_public_ip" "pip" {
   name                = "${var.vm_name}-pip"
   resource_group_name = var.rg_name
   location            = var.location
-  allocation_method   = var.allocation_method
+  allocation_method   = "Static"
 }
 
 resource "azurerm_user_assigned_identity" "identity" {
