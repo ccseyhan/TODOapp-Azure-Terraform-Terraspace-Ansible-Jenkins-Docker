@@ -1,11 +1,11 @@
 module "rg" {
-    source = "../modules/resource_group"
+    source = "../../modules/resource_group"
     name = var.rg_name
     location = var.location
 }
 
 module "vnet" {
-    source = "../modules/vnet"
+    source = "../../modules/vnet"
     name = var.vnet_name
     location = var.location
     rg_name = var.rg_name
@@ -13,7 +13,7 @@ module "vnet" {
 }
 
 module "subnet" {
-    source = "../modules/subnet"
+    source = "../../modules/subnet"
     name = var.subnet_name
     rg_name = var.rg_name
     vnet_name = module.vnet.name
@@ -21,7 +21,7 @@ module "subnet" {
 }
 
 module "vm_postgresql" {
-    source = "../modules/virtual_machine"
+    source = "../../modules/virtual_machine"
     vm_name = var.vm_name_postgre
     location = var.location
     rg_name = var.rg_name
@@ -32,7 +32,7 @@ module "vm_postgresql" {
 }
 
 module "vm_nodejs" {
-    source = "../modules/virtual_machine"
+    source = "../../modules/virtual_machine"
     vm_name = var.vm_name_nodejs
     location = var.location
     rg_name = var.rg_name
@@ -43,7 +43,7 @@ module "vm_nodejs" {
 }
 
 module "vm_react" {
-    source = "../modules/virtual_machine"
+    source = "../../modules/virtual_machine"
     vm_name = var.vm_name_react
     location = var.location
     rg_name = var.rg_name
@@ -54,7 +54,7 @@ module "vm_react" {
 }
 
 module "nsg" {
-    source = "../modules/nsg"
+    source = "../../modules/nsg"
     name = var.nsg_name
     location = var.location
     rg_name = var.rg_name
